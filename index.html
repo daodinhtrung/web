@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <nav>
+                <a href="index.html">Trang Chủ</a>
+                <a href="#products">Sản Phẩm</a>
+                <a href="login.html">Đăng Nhập</a>
+                <a href="register.html">Đăng Ký</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner Slider -->
+        <section class="banner-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/banner1.jpg" alt="Banner 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/banner2.jpg" alt="Banner 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/banner3.jpg" alt="Banner 3">
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <!-- Download Module -->
+        <section class="download-module">
+            <div class="container">
+                <div class="module-content module-qr">
+                    <img src="images/download-bg.jpg" alt="Download Background">
+                    <div class="content">
+                        <img src="images/qr-code.png" alt="QR Code" class="qr-code-image">
+                        <div class="download-btn">
+                            <div class="btn"></div>
+                            <div class="btn-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product List -->
+        <section class="product-list" id="products">
+            <div class="container">
+                <h2>Sản Phẩm</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="images/product1.jpg" alt="Áo Thun">
+                        <h3>Áo Thun</h3>
+                        <p>150,000 VNĐ</p>
+                        <button class="order-btn" data-id="1">Thêm vào giỏ</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product2.jpg" alt="Quần Jeans">
+                        <h3>Quần Jeans</h3>
+                        <p>250,000 VNĐ</p>
+                        <button class="order-btn" data-id="2">Thêm vào giỏ</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product3.jpg" alt="Giày Sneaker">
+                        <h3>Giày Sneaker</h3>
+                        <p>350,000 VNĐ</p>
+                        <button class="order-btn" data-id="3">Thêm vào giỏ</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product4.jpg" alt="Túi Xách">
+                        <h3>Túi Xách</h3>
+                        <p>200,000 VNĐ</p>
+                        <button class="order-btn" data-id="4">Thêm vào giỏ</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product5.jpg" alt="Đồng Hồ">
+                        <h3>Đồng Hồ</h3>
+                        <p>300,000 VNĐ</p>
+                        <button class="order-btn" data-id="5">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Cửa Hàng. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Khởi tạo Swiper
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // Xử lý thêm vào giỏ hàng (chuyển hướng đến đăng nhập nếu chưa đăng nhập)
+        document.querySelectorAll('.order-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.');
+                window.location.href = 'login.html';
+            });
+        });
+    </script>
+</body>
+</html>

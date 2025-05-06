@@ -1,0 +1,27 @@
+[25-Apr-2025 22:38:31 Europe/Berlin] Lỗi trong forgot_password.php: Yêu cầu không hợp lệ.
+[25-Apr-2025 22:38:44 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reset_token' in 'field list' in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php:53
+Stack trace:
+#0 C:\Users\Admin\Documents\Finalweb\php\forgot_password.php(53): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php on line 53
+[25-Apr-2025 22:39:34 Europe/Berlin] Lỗi trong forgot_password.php: Yêu cầu không hợp lệ.
+[25-Apr-2025 22:39:45 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reset_token' in 'field list' in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php:53
+Stack trace:
+#0 C:\Users\Admin\Documents\Finalweb\php\forgot_password.php(53): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php on line 53
+[25-Apr-2025 22:42:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reset_token' in 'field list' in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php:53
+Stack trace:
+#0 C:\Users\Admin\Documents\Finalweb\php\forgot_password.php(53): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php on line 53
+[25-Apr-2025 22:43:25 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reset_token' in 'field list' in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php:53
+Stack trace:
+#0 C:\Users\Admin\Documents\Finalweb\php\forgot_password.php(53): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php on line 53
+[25-Apr-2025 22:44:27 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'reset_token' in 'field list' in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php:53
+Stack trace:
+#0 C:\Users\Admin\Documents\Finalweb\php\forgot_password.php(53): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\Users\Admin\Documents\Finalweb\php\forgot_password.php on line 53

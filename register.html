@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="login-page">
+        <div class="login-container">
+            <div class="login-left">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <p>Nền tảng thương mại điện tử<br>yêu thích ở Đông Nam Á & Đài Loan</p>
+            </div>
+            <div class="login-right">
+                <h2>Đăng Ký</h2>
+                <div id="notification" style="display: none;">
+                    <span id="notification-message"></span>
+                    <button class="close-btn">×</button>
+                </div>
+                <form id="register-form">
+                    <div>
+                        <input type="text" id="username" name="username" placeholder="Tên đăng nhập" required>
+                    </div>
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div>
+                        <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+                    </div>
+                    <button type="submit">Đăng Ký</button>
+                </form>
+                <div class="register-link">
+                    <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+
+            try {
+                const response = await fetch('php/register.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                // Kiểm tra xem phản hồi có phải JSON không
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    throw new Error('Phản hồi từ server không phải JSON: ' + await response.text());
+                }
+
+                const data = await response.json();
+
+                notification.style.display = 'block';
+                notification.className = data.success ? 'success' : 'error';
+                notificationMessage.textContent = data.message;
+
+                if (data.success) {
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 2000);
+                }
+            } catch (error) {
+                notification.style.display = 'block';
+                notification.className = 'error';
+                notificationMessage.textContent = 'Lỗi kết nối: ' + error.message;
+                console.error('Lỗi:', error);
+            }
+        });
+    </script>
+</body>
+</html>

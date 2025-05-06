@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="login-page">
+        <div class="login-container">
+            <div class="login-left">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <p>Nền tảng thương mại điện tử<br>yêu thích ở Đông Nam Á & Đài Loan</p>
+            </div>
+            <div class="login-right">
+                <h2>Đăng Nhập</h2>
+                <div id="notification" style="display: none;">
+                    <span id="notification-message"></span>
+                    <button class="close-btn">×</button>
+                </div>
+                <form id="login-form">
+                    <div>
+                        <input type="text" id="username" name="username" placeholder="Email/Số điện thoại/Tên đăng nhập" required>
+                    </div>
+                    <div>
+                        <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+                    </div>
+                    <button type="submit">Đăng Nhập</button>
+                </form>
+                <div class="form-links">
+                    <a href="forgot_password.html">Quên mật khẩu</a>
+                    <a href="#">Đăng nhập với SMS</a>
+                </div>
+                <div class="social-login">
+                    <button class="facebook-btn">Facebook</button>
+                    <button class="google-btn">Google</button>
+                </div>
+                <div class="register-link">
+                    <p>Bạn mới đến? <a href="register.html">Đăng ký</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+
+            try {
+                const response = await fetch('php/login.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                notification.style.display = 'block';
+                notification.className = data.success ? 'success' : 'error';
+                notificationMessage.textContent = data.message;
+
+                if (data.success) {
+                    setTimeout(() => {
+                        window.location.href = 'index.php';
+                    }, 1000);
+                }
+            } catch (error) {
+                notification.style.display = 'block';
+                notification.className = 'error';
+                notificationMessage.textContent = 'Lỗi kết nối. Vui lòng thử lại.';
+                console.error('Lỗi:', error);
+            }
+        });
+    </script>
+</body>
+</html>

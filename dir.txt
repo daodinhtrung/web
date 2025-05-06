@@ -1,0 +1,39 @@
+ecommerce/
+├── css/
+│   └── styles.css
+├── images/
+│   ├── avatars/
+│   │   ├── 1.jpg
+│   │   └── 2.jpg
+│   ├── banner1.jpg
+│   ├── banner2.jpg
+│   ├── banner3.jpg
+│   ├── download-bg.jpg
+│   ├── logo.png
+│   ├── product1.jpg
+│   ├── product2.jpg
+│   ├── product3.jpg
+│   ├── product4.jpg
+│   ├── product5.jpg
+│   └── qr-code.png
+├── js/
+│   └── script.js
+├── php/
+│   ├── cart.php
+│   ├── config.php
+│   ├── forgot_password.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── order.php
+│   ├── profile.php
+│   ├── register.php
+│   ├── reset_password.php
+│   └── settings.php
+├── database.sql
+├── forgot_password.html
+├── index.html
+├── index.php
+├── login.html
+└── register.html
+intz uvvn ihbp txtl
+tgevcjfnjhywjelq
