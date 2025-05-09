@@ -157,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cropped_image'])) {
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-content">
-                <img src="images/logo.png" alt="Logo" class="logo">
+                <img src="../images/logo.png" alt="Logo" class="logo">
                 <div class="hotline">
                     <span>HOTLINE: 0977508430 | 0338000308</span>
                 </div>

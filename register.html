@@ -77,6 +77,11 @@
                 console.error('Lỗi:', error);
             }
         });
+
+        // Thêm sự kiện đóng thông báo
+        document.querySelector('#notification .close-btn')?.addEventListener('click', () => {
+            document.getElementById('notification').style.display = 'none';
+        });
     </script>
 </body>
 </html>
